@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -10,7 +11,7 @@ namespace TournamentSimulation
     {
         private string name;
         private int elo;
-        private int points;
+        private double points;
 
         public Player(string name, int elo)
         {
@@ -21,9 +22,11 @@ namespace TournamentSimulation
 
         public string GetName() { return this.name; }
         public int GetElo() { return this.elo; }
-        public int GetPoints() { return this.points; }
+        public double GetPoints() { return this.points; }
 
         public void SetElo(int elo) { this.elo = elo; }
-        public void SetPoints(int points) { this.points = points; }
+        public void SetPoints(double points) { this.points = points; }
+
+        public void AddPoints(double amount) { points += amount; }
     }
 }
